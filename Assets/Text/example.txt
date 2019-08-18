@@ -1,0 +1,10 @@
+Player|Hi Taichi! How's it going?|idle_00
+Taichi|Not too well, Player. I failed my calculus exam today...|lookdown_00
+Player|That's terrible, Taichi! Have you spoken to the professor for help?|
+Taichi|Well, he's kinda intimidating. I wouldn't want to push his buttons too much.|embar_00
+Player|How about you come and study with me!|
+Player|That way, you'll be able to ace your next exam!|
+Taichi|Gee...you really mean it? W-w-well that would be GREAT!|offerhug_00
+Taichi|It's a DATE then!|special_20_p
+Taichi|I-I mean...a study date, that is. Hehe...|embar_01
+Player|Haha! You're so weird, Taichi|
