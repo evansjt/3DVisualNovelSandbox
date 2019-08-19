@@ -28,9 +28,15 @@ public class TextBoxStructs
 
     public struct DialogueLine
     {
-	    internal string CharacterName { get; set; }
+        internal string CharacterName { get; set; }
 	    internal string DialogueText { get; set; }
 	    internal string CharacterAnimation { get; set; }
+    }
+
+    public struct CameraDelta
+    {
+        internal Vector3 PositionDelta { get; set; }
+        internal Vector3 RotationDelta { get; set; }
     }
 }
 

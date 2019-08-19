@@ -2,8 +2,8 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TextBoxManager.cs">
     <Files>
       <File FileName="Assets/Scripts/TextBoxManager.cs" Line="96" Column="14" />
-      <File FileName="Assets/Scripts/TextBoxStructs.cs" Line="12" Column="37" />
-      <File FileName="Assets/Text/example.txt" Line="11" Column="1" />
+      <File FileName="Assets/Scripts/TextBoxStructs.cs" />
+      <File FileName="Assets/Text/example.txt" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -23,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="619eb182-491e-491a-95d5-407ce4614d6d" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8f8061d6-92b3-4f79-b0b6-5c04302bb268" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
