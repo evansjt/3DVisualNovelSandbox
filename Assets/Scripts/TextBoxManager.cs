@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using TMPro;
 using UnityEditor;
 using UnityEngine;
 using static TextBoxStructs;
@@ -10,9 +11,11 @@ public class TextBoxManager : MonoBehaviour
 {    
     public List<CharacterInScene> charactersInScene;
 
-    public HeaderTextBox headerTextBox;
+    public GameObject headerTextBox;
 
-    public DialogueTextBox dialogueTextBox;
+    public GameObject dialogueTextBox;
+
+    public GameObject inputPromptBox;
 
     public TextAsset textFile;
 
@@ -22,6 +25,7 @@ public class TextBoxManager : MonoBehaviour
     private string[] textLines;
     private DialogueLine line;
     private CameraDelta cameraDelta;
+    private readonly List<Option> optionsList = new List<Option>();
     private bool translating;
     private bool rotating;
 
@@ -37,6 +41,8 @@ public class TextBoxManager : MonoBehaviour
         {
             endAtLine = textLines.Length - 1;
         }
+
+        InputPromptEnabled(false);
 
         AdvanceLine();
     }
@@ -62,7 +68,7 @@ public class TextBoxManager : MonoBehaviour
         if (textLines.Length > 0)
         {
             string[] lineBlock = textLines[currentLineIndex].Split('|');
-            if (lineBlock[0] == "camera")
+            if (lineBlock[0] == "CAMERA")
             {
                 cameraDelta = new CameraDelta
                 {
@@ -71,6 +77,11 @@ public class TextBoxManager : MonoBehaviour
                 };
                 ChangeCameraLocation(0.75f);
             }
+            else if (lineBlock[0] == "INPUT")
+            {
+                InputPromptEnabled(true);
+                InitializeInputPrompt(lineBlock);
+            }
             else
             {
                 DeclareDialogueLine(lineBlock);
@@ -78,18 +89,51 @@ public class TextBoxManager : MonoBehaviour
         }
     }
 
+    private void InitializeInputPrompt(string[] lineBlock)
+    {
+        for (int i = 1; i < lineBlock.Length; i++)
+        {
+            string[] optionBlock = lineBlock[i].Split('=');
+            int scoreInc = int.Parse(optionBlock[1], new NumberFormatInfo { NegativeSign = "-" });
+            optionsList.Add(new Option { OptionText = optionBlock[0], ScoreIncrement = scoreInc });
+        }
+
+        ShuffleList(optionsList);
+        for (int i = 0; i < inputPromptBox.transform.childCount; i++)
+        {
+            inputPromptBox.transform.GetChild(i).GetComponentInChildren<TextMeshProUGUI>().text = optionsList[i].OptionText;
+        }
+    }
+
+    private void ShuffleList<T>(List<T> list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            T temp = list[i];
+            int randomIndex = Random.Range(i, list.Count);
+            list[i] = list[randomIndex];
+            list[randomIndex] = temp;
+        }
+    }
+
+    private void InputPromptEnabled(bool isEnabled)
+    {
+        inputPromptBox.GetComponent<Renderer>().enabled = isEnabled;
+        for (int i = 0; i < inputPromptBox.transform.childCount; i++)
+        {
+            GameObject optionBox = inputPromptBox.transform.GetChild(i).gameObject;
+            optionBox.GetComponentInChildren<Renderer>().enabled = isEnabled;
+            optionBox.GetComponentInChildren<TextMeshProUGUI>().enabled = isEnabled;
+        }
+    }
+
     private Vector3 ParseStringArrayToVector3(string[] positions)
     {
-        var fmt = new NumberFormatInfo
-        {
-            NegativeSign = "-"
-        };
-
         Vector3 newVector = new Vector3
         {
-            x = float.Parse(positions[0], fmt),
-            y = float.Parse(positions[1], fmt),
-            z = float.Parse(positions[2], fmt)
+            x = float.Parse(positions[0], new NumberFormatInfo { NegativeSign = "-" }),
+            y = float.Parse(positions[1], new NumberFormatInfo { NegativeSign = "-" }),
+            z = float.Parse(positions[2], new NumberFormatInfo { NegativeSign = "-" })
         };
         return newVector;
     }
@@ -174,7 +218,7 @@ public class TextBoxManager : MonoBehaviour
         CharacterInScene character = charactersInScene.Find(c => c.CharacterName == line.CharacterName);
 
         CreateHeader(character);
-        dialogueTextBox.dialogueText.text = line.DialogueText;
+        ChangeTextInTextBox(dialogueTextBox, line.DialogueText);
 
         if (line.CharacterAnimation != "")
         {
@@ -200,7 +244,13 @@ public class TextBoxManager : MonoBehaviour
 
     private void CreateHeader(CharacterInScene character)
     {
-        headerTextBox.headerText.text = line.CharacterName;
-        headerTextBox.headerTextBoxObject.GetComponent<MeshRenderer>().material = character.HeaderMaterial;
+        headerTextBox.GetComponent<MeshRenderer>().material = character.HeaderMaterial;
+        ChangeTextInTextBox(headerTextBox, line.CharacterName);
+    }
+
+    private void ChangeTextInTextBox(GameObject thisGameObject, string toText)
+    {
+        GameObject textObject = thisGameObject.transform.GetChild(0).gameObject;
+        textObject.GetComponent<TextMeshProUGUI>().text = toText;
     }
 }

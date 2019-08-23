@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BlinkToggle.cs" />
+    <Compile Include="Assets\Scripts\OptionHighlighter.cs" />
     <Compile Include="Assets\Scripts\TextBoxManager.cs" />
     <Compile Include="Assets\Scripts\TextBoxStructs.cs" />
     <None Include="Assets\TaichiCharacterPack\Shaders\toon_cutoff.shader" />

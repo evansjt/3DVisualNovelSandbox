@@ -12,20 +12,6 @@ public class TextBoxStructs
 	    public Material HeaderMaterial;
     }
 
-    [Serializable]
-    public struct HeaderTextBox
-    {
-	    public GameObject headerTextBoxObject;
-	    public TextMeshProUGUI headerText;
-    }
-
-    [Serializable]
-    public struct DialogueTextBox
-    {
-	    public GameObject dialogueTextBoxObject;
-	    public TextMeshProUGUI dialogueText;
-    }
-
     public struct DialogueLine
     {
         internal string CharacterName { get; set; }
@@ -37,6 +23,12 @@ public class TextBoxStructs
     {
         internal Vector3 PositionDelta { get; set; }
         internal Vector3 RotationDelta { get; set; }
+    }
+
+    public struct Option
+    {
+        internal string OptionText { get; set; }
+        internal int ScoreIncrement { get; set; }
     }
 }
 
