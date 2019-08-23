@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{1986CCAD-A8DF-7327-7E78-1E3892F38CE2}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TextBoxManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/TextBoxManager.cs" Line="96" Column="14" />
+      <File FileName="Assets/Scripts/TextBoxManager.cs" Line="7" Column="30" />
       <File FileName="Assets/Scripts/TextBoxStructs.cs" />
       <File FileName="Assets/Text/example.txt" />
     </Files>
@@ -23,7 +23,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="8f8061d6-92b3-4f79-b0b6-5c04302bb268" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="957511f8-5e7e-4ff5-812c-b16367989ed2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
