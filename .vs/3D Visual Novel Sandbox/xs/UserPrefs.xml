@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{1986CCAD-A8DF-7327-7E78-1E3892F38CE2}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/TextBoxManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/TextBoxManager.cs" Line="103" Column="52" />
-      <File FileName="Assets/Scripts/TextBoxStructs.cs" Line="15" Column="31" />
-      <File FileName="Assets/Text/example.txt" Line="14" Column="1" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="91" Column="1" />
+      <File FileName="Assets/Text/example.txt" Line="22" Column="118" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -11,9 +10,8 @@
           <Node name="3D Visual Novel Sandbox" expanded="True">
             <Node name="Assets" expanded="True">
               <Node name="Scripts" expanded="True">
-                <Node name="TextBoxManager.cs" selected="True" />
+                <Node name="DialogueManager.cs" selected="True" />
               </Node>
-              <Node name="TaichiCharacterPack" expanded="True" />
               <Node name="Text" expanded="True" />
             </Node>
           </Node>
@@ -23,9 +21,11 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="957511f8-5e7e-4ff5-812c-b16367989ed2" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c36b225a-6e6a-4c95-bc0f-49bc58b41b8e" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore />
+    <BreakpointStore>
+      <Breakpoint file="/Users/evansjt/Documents/Unity Projects/3D Visual Novel Sandbox/Assets/Scripts/DialogueManager.cs" relfile="Assets/Scripts/DialogueManager.cs" line="91" column="1" />
+    </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

@@ -1,12 +1,13 @@
 ﻿using TMPro;
 using UnityEngine;
 
-public class OptionHighlighter : MonoBehaviour
+public class OptionListener : MonoBehaviour
 {
     [SerializeField] Color mouseOverBoxColor;
     [SerializeField] Color mouseOverTextColor;
     private Color originalColor;
     private Color originalTextColor;
+    private string SelectedOptionText { get; set; }
 
     private void Start()
     {
@@ -25,4 +26,11 @@ public class OptionHighlighter : MonoBehaviour
         GetComponent<MeshRenderer>().material.color = originalColor;
         GetComponentInChildren<TextMeshProUGUI>().color = originalTextColor;
     }
+
+    private void OnMouseDown()
+    {
+        SelectedOptionText = GetComponentInChildren<TextMeshProUGUI>().text;
+    }
+
+    public string GetSelectedOptionText() => SelectedOptionText;
 }
