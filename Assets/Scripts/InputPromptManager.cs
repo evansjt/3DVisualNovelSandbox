@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Globalization;
 using TMPro;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -8,13 +7,12 @@ using Random = UnityEngine.Random;
 internal struct Option
 {
     internal string OptionText { get; set; }
-    internal int ScoreIncrement { get; set; }
     internal int StartAtLine { get; set; }
     internal int EndAtLine { get; set; }
     internal int JumpToLine { get; set; }
 }
 
-internal class InputPromptManager
+internal class InputPromptManager : ILineManager
 {
     private readonly List<Option> optionsList;
     internal Option SelectedOption { get; private set; }
@@ -25,6 +23,13 @@ internal class InputPromptManager
     {
         InputPromptBox = inputPromptBox;
         optionsList = new List<Option>();
+        SetInputPromptEnabled(false);
+    }
+
+    public void Action(string[] lineBlock)
+    {
+        SetInputPromptEnabled(true);
+        InitializeInputPrompt(lineBlock);
     }
 
     internal void InitializeInputPrompt(string[] lineBlock)
@@ -32,14 +37,12 @@ internal class InputPromptManager
         for (int i = 1; i < lineBlock.Length; i++)
         {
             string[] optionBlock = lineBlock[i].Split('=');
-            int scoreInc = int.Parse(optionBlock[1], new NumberFormatInfo { NegativeSign = "-" });
-            int startAtLine = int.Parse(optionBlock[2]) - 1;
-            int endAtLine = int.Parse(optionBlock[3]) - 1;
-            int jumpToLine = int.Parse(optionBlock[4]) - 1;
+            int startAtLine = int.Parse(optionBlock[1]) - 1;
+            int endAtLine = int.Parse(optionBlock[2]) - 1;
+            int jumpToLine = int.Parse(optionBlock[3]) - 1;
             optionsList.Add(new Option
             {
                 OptionText = optionBlock[0],
-                ScoreIncrement = scoreInc,
                 StartAtLine = startAtLine,
                 EndAtLine = endAtLine,
                 JumpToLine = jumpToLine

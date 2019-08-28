@@ -1,18 +1,19 @@
 ﻿<Properties StartupConfiguration="{1986CCAD-A8DF-7327-7E78-1E3892F38CE2}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueManager.cs">
     <Files>
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="91" Column="1" />
-      <File FileName="Assets/Text/example.txt" Line="22" Column="118" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="56" Column="40" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="3D Visual Novel Sandbox" expanded="True">
             <Node name="Assets" expanded="True">
+              <Node name="Resources" expanded="True">
+                <Node name="Text" expanded="True" />
+              </Node>
               <Node name="Scripts" expanded="True">
                 <Node name="DialogueManager.cs" selected="True" />
               </Node>
-              <Node name="Text" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -21,11 +22,9 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c36b225a-6e6a-4c95-bc0f-49bc58b41b8e" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="a37b4e61-176f-4a3b-b7d7-33e20a64236a" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/evansjt/Documents/Unity Projects/3D Visual Novel Sandbox/Assets/Scripts/DialogueManager.cs" relfile="Assets/Scripts/DialogueManager.cs" line="91" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
 </Properties>

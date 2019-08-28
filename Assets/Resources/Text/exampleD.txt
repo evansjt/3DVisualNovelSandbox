@@ -1,0 +1,5 @@
+﻿SCORE|Katsuro|-1
+CAMERA|0,0,0|10,0,0
+TEXT|Katsuro|FUTURE BOYFRIEND MY ASS! ARE YOU SERIOUS?!?|storepower_20
+CAMERA|0,0,0|-10,0,0
+JUMP|example|23

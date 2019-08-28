@@ -2,42 +2,55 @@
 using TMPro;
 using UnityEngine;
 
-internal class TextBoxManager
+internal struct DialogueLine
 {
-    private readonly CharacterManager characterManager;
+    internal string CharacterName { get; set; }
+    internal string DialogueText { get; set; }
+    internal string CharacterAnimation { get; set; }
+}
+
+internal class TextBoxManager : ILineManager
+{
+
     private DialogueLine line;
     internal GameObject HeaderTextBox { get; private set; }
     internal GameObject DialogueTextBox { get; private set; }
+    internal List<CharacterManager> CharacterManagers { get; set; }
 
-    internal TextBoxManager(GameObject headerTextBox, GameObject dialogueTextBox, List<CharacterInScene> charactersInScene)
+    internal TextBoxManager(GameObject headerTextBox, GameObject dialogueTextBox, List<CharacterManager> characterManagers)
     {
         HeaderTextBox = headerTextBox;
         DialogueTextBox = dialogueTextBox;
-        characterManager = new CharacterManager(charactersInScene);
+        CharacterManagers = characterManagers;
+    }
+
+    public void Action(string[] lineBlock)
+    {
+        DeclareDialogueLine(lineBlock);
     }
 
     internal void DeclareDialogueLine(string[] lineBlock)
     {
         line = new DialogueLine
         {
-            CharacterName = lineBlock[0],
-            DialogueText = lineBlock[1],
-            CharacterAnimation = lineBlock[2]
+            CharacterName = lineBlock[1],
+            DialogueText = lineBlock[2],
+            CharacterAnimation = lineBlock[3]
         };
         DisplayNewDialogue();
     }
 
     private void DisplayNewDialogue()
     {
-        CharacterInScene character = characterManager.CharactersInScene.Find(c => c.CharacterName == line.CharacterName);
+        CharacterManager characterManager = CharacterManagers.Find(c => c.Character.CharacterName == line.CharacterName);
 
-        CreateHeader(character);
+        CreateHeader(characterManager.Character);
 
         ChangeTextInTextBox(DialogueTextBox, line.DialogueText);
 
         if (line.CharacterAnimation != "")
         {
-            characterManager.LoadAnimation(character, line.CharacterAnimation);
+            characterManager.LoadAnimation(line.CharacterAnimation);
         }
     }
 

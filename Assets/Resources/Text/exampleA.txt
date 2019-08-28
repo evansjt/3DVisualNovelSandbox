@@ -1,0 +1,3 @@
+﻿SCORE|Katsuro|1
+TEXT|Katsuro|...Really?! What kind of friend looks at another friend like that?|refuse_01
+JUMP|example|23

@@ -1,0 +1,3 @@
+﻿SCORE|Katsuro|1
+TEXT|Katsuro|It seemed like you wanted to be more than "study buddies" with him, didn't it?|refuse_01
+JUMP|example|23

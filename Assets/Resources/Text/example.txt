@@ -1,0 +1,23 @@
+TEXT|Player|Hi Taichi! How's it going?|
+TEXT|Taichi|Not too well, Player. I failed my calculus exam today...|lookdown_00
+TEXT|Player|That's terrible, Taichi! Have you spoken to the professor for help?|
+TEXT|Taichi|Well, he's kinda intimidating. I wouldn't want to push his buttons too much.|embar_00
+TEXT|Player|How about you come and study with me!|
+TEXT|Player|That way, you'll be able to ace your next exam!|
+TEXT|Taichi|Gee...you really mean it? W-w-well that would be GREAT!|offerhug_00
+TEXT|Taichi|It's a DATE then!|special_20_p
+TEXT|Taichi|I-I mean...a study date, that is. Hehe...|embar_01
+TEXT|Player|Haha! You're so weird, Taichi.|
+CAMERA|0,0,0|0,-90,0
+TEXT|Katsuro|Who was that?|crossarms_00
+INPUT|Just a friend.=15=15=23|Is it any of your business?=17=17=23|My new study buddy!=19=19=23|My future boyfriend!!!=21=21=23
+
+JUMP|exampleA|1
+
+JUMP|exampleB|1
+
+JUMP|exampleC|1
+
+JUMP|exampleD|1
+
+TEXT|Katsuro|Whatever. You know what? Have fun. I hope you have a FANTASTIC time with "whatever-his-name-is"!|crossarms_00

@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 [Serializable]
 public struct CharacterInScene
@@ -14,26 +11,22 @@ public struct CharacterInScene
 
 internal class CharacterManager
 {
-    internal List<CharacterInScene> CharactersInScene { get; private set; }
+    internal CharacterInScene Character { get; private set; }
+    internal int CurrentScore { get; set; }
 
-    internal CharacterManager(List<CharacterInScene> charactersInScene)
+    internal CharacterManager(CharacterInScene characterInScene)
     {
-        CharactersInScene = charactersInScene;
+        Character = characterInScene;
+        CurrentScore = 0;
     }
 
-    internal void LoadAnimation(CharacterInScene character, string characterAnimation)
+    internal void LoadAnimation(string characterAnimation)
     {
-        string path = $"Assets/TaichiCharacterPack/Resources/Taichi/Animations Legacy/m01@{characterAnimation}.fbx";
-
-        Object[] assetRepresentationsAtPath = AssetDatabase.LoadAllAssetRepresentationsAtPath(path);
-        foreach (Object assetRepresentation in assetRepresentationsAtPath)
+        AnimationClip animationClip = Resources.Load<AnimationClip>($"Animations Legacy/m01@{characterAnimation}");
+        if (animationClip != null)
         {
-            AnimationClip animationClip = assetRepresentation as AnimationClip;
-            if (animationClip != null)
-            {
-                character.CharacterModel.GetComponent<Animation>().AddClip(animationClip, characterAnimation);
-                character.CharacterModel.GetComponent<Animation>().CrossFade(characterAnimation);
-            }
+            Character.CharacterModel.GetComponent<Animation>().AddClip(animationClip, characterAnimation);
+            Character.CharacterModel.GetComponent<Animation>().CrossFade(characterAnimation);
         }
     }
 }

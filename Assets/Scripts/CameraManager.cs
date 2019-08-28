@@ -2,10 +2,13 @@
 using System.Globalization;
 using UnityEngine;
 
-internal class CameraManager : MonoBehaviour
+internal class CameraManager : MonoBehaviour, ILineManager
 {
+    public bool cameraMoved;
+
     private bool translating;
     private bool rotating;
+
     internal Vector3 PositionDelta { get; private set; }
     internal Vector3 RotationDelta { get; private set; }
 
@@ -13,6 +16,13 @@ internal class CameraManager : MonoBehaviour
     {
         PositionDelta = ParseStringArrayToVector3(stringsOfTranslation);
         RotationDelta = ParseStringArrayToVector3(stringsOfRotation);
+    }
+
+    public void Action(string[] lineBlock)
+    {
+        InitializeCameraDelta(lineBlock[1].Split(','), lineBlock[2].Split(','));
+        ChangeCameraLocation(0.75f);
+        cameraMoved = true;
     }
 
     private Vector3 ParseStringArrayToVector3(string[] positions)
