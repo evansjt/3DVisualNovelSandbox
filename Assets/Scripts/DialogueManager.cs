@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
 public class DialogueManager : MonoBehaviour, ILineManager
 {
-    public List<CharacterInScene> charactersInScene;
+    public List<GameObject> charactersInScene;
     public GameObject headerTextBox;
     public GameObject dialogueTextBox;
     public GameObject inputPromptBox;
@@ -46,7 +47,7 @@ public class DialogueManager : MonoBehaviour, ILineManager
         characterManagers = new List<CharacterManager>();
         foreach (var character in charactersInScene)
         {
-            characterManagers.Add(new CharacterManager(character));
+            characterManagers.Add(character.GetComponent<CharacterManager>());
         }
 
         lineManagers.Add("CAMERA", Camera.main.GetComponent<CameraManager>());
@@ -54,6 +55,7 @@ public class DialogueManager : MonoBehaviour, ILineManager
         lineManagers.Add("TEXT", new TextBoxManager(headerTextBox, dialogueTextBox, characterManagers));
         lineManagers.Add("SCORE", new ScoreManager(characterManagers));
         lineManagers.Add("JUMP", this);
+        lineManagers.Add("MOVE", new MoveCharacterManager(characterManagers));
     }
 
     // Update is called once per frame
@@ -67,7 +69,9 @@ public class DialogueManager : MonoBehaviour, ILineManager
             jumpToLine = ((InputPromptManager)lineManagers["INPUT"]).SelectedOption.JumpToLine - 1;
         }
 
-        if (Input.GetMouseButtonDown(0) || (currentLineBlock[0] != "TEXT" && currentLineBlock[0] != "INPUT"))
+        if ((Input.GetMouseButtonDown(0) && currentLineBlock[0] == "TEXT") ||
+            (!((InputPromptManager)lineManagers["INPUT"]).InputPromptEnabled && currentLineBlock[0] == "INPUT") ||
+            (currentLineBlock[0] != "TEXT" && currentLineBlock[0] != "INPUT"))
         {
             currentLineIndex++;
             HandleCurrentLine();

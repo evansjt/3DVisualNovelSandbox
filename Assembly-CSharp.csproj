@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\ILineManager.cs" />
     <Compile Include="Assets\Scripts\InputPromptManager.cs" />
+    <Compile Include="Assets\Scripts\MoveCharacterManager.cs" />
     <Compile Include="Assets\Scripts\OptionListener.cs" />
     <Compile Include="Assets\Scripts\ScoreManager.cs" />
     <Compile Include="Assets\Scripts\TextBoxManager.cs" />

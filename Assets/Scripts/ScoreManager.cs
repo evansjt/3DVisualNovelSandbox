@@ -15,7 +15,7 @@ internal class ScoreManager : ILineManager
     {
         foreach (var characterManager in characterManagers)
         {
-            if (lineBlock[1] == characterManager.Character.CharacterName)
+            if (lineBlock[1] == characterManager.CharacterName)
             {
                 int scoreInc = int.Parse(lineBlock[2], new NumberFormatInfo { NegativeSign = "-" });
                 characterManager.CurrentScore += scoreInc;

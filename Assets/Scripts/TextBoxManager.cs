@@ -42,19 +42,19 @@ internal class TextBoxManager : ILineManager
 
     private void DisplayNewDialogue()
     {
-        CharacterManager characterManager = CharacterManagers.Find(c => c.Character.CharacterName == line.CharacterName);
+        CharacterManager characterManager = CharacterManagers.Find(c => c.CharacterName == line.CharacterName);
 
-        CreateHeader(characterManager.Character);
+        CreateHeader(characterManager);
 
         ChangeTextInTextBox(DialogueTextBox, line.DialogueText);
 
         if (line.CharacterAnimation != "")
         {
-            characterManager.LoadAnimation(line.CharacterAnimation);
+            characterManager.LoadAndPlayAnimation(line.CharacterAnimation);
         }
     }
 
-    private void CreateHeader(CharacterInScene character)
+    private void CreateHeader(CharacterManager character)
     {
         HeaderTextBox.GetComponent<MeshRenderer>().material = character.HeaderMaterial;
         ChangeTextInTextBox(HeaderTextBox, line.CharacterName);

@@ -8,7 +8,7 @@ TEXT|Taichi|Gee...you really mean it? W-w-well that would be GREAT!|offerhug_00
 TEXT|Taichi|It's a DATE then!|special_20_p
 TEXT|Taichi|I-I mean...a study date, that is. Hehe...|embar_01
 TEXT|Player|Haha! You're so weird, Taichi.|
-CAMERA|0,0,0|0,-90,0
+CAMERA|0,0,0|0,-90,0|0.75
 TEXT|Katsuro|Who was that?|crossarms_00
 INPUT|Just a friend.=15=15=23|Is it any of your business?=17=17=23|My new study buddy!=19=19=23|My future boyfriend!!!=21=21=23
 
@@ -21,3 +21,8 @@ JUMP|exampleC|1
 JUMP|exampleD|1
 
 TEXT|Katsuro|Whatever. You know what? Have fun. I hope you have a FANTASTIC time with "whatever-his-name-is"!|crossarms_00
+TEXT|Player|(I'll definitely have more fun with him than you, sourpuss!)|
+MOVE|Riku|0,0,15|0,0,0|1.5|walk_00|idle_00
+MOVE|Katsuro|0,0,5|0,45,0|1.5|walk_00|crossarms_00
+MOVE|Riku|0,0,0|0,45,0|3|walk_00|idle_00
+TEXT|Riku|Hey, guys! What's going on?|

@@ -13,18 +13,34 @@ TEXT|{Character name}|{Dialogue text}|{Character animation}
 * TEXT: indicates that the current line read is a text-line action.
 * {Character name}: the name of the character will appear on the header of the Dialogue Box in the scene.
 * {Line of dialogue}: the line of dialogue in which the character will speak will appear in the main canvas of the Dialogue Box in the scene.
-- {Character animation}: the character model will mimic the animation from the animation's given filename [e.g. giving "idle_00" will call the animation from the "m01@idle_00.fbx" file in the "Assets/TaichiCharacterPack/Resources/Taichi/Animations Legacy" folder].
+- {Character animation}: the character model will mimic the animation from the animation's given filename [e.g. giving "idle_00" will call the animation from the "m01@idle_00.fbx" file in the "Assets/Resources/Animations Legacy" folder].
+
+---------------------------------------------------
+
+MOVE LINE:
+Changes the position and the animation of the character model.
+
+MOVE|{Character name}|{position dX},{position dY},{position dZ}|{rotation dX},{rotation dY},{rotation dZ}|{speed}|{start animation}|{end animation}
+
+* MOVE: indicates that the current line read is a move action.
+* {Character name}: the name of the character being moved.
+* {position dX},{position dY},{position dZ}: indicates how many units the character must move in X, Y, and Z coordinates [e.g. "1,2,-3" would move the character one unit in the +X direction (right), two units in the +Y direction (up), and three units in the -Z direction (back)].
+* {rotation dX},{rotation dY},{rotation dZ}: indicates how many degrees the character must rotate in X, Y, and Z coordinates [e.g. "10,-90,180" would rotate the character 10 degrees around the X axis (down), -90 degrees around the Y axis (left), and 180 degrees around the Z axis (upside-down)].
+* {speed}: a float value indicating the speed at which the character moves.
+- {start animation}: the character model will mimic the animation from the animation's given filename at the beginning of the action [e.g. giving "idle_00" will call the animation from the "m01@idle_00.fbx" file in the "Assets/Resources/Animations Legacy" folder].
+- {end animation}: the character model will mimic the animation from the animation's given filename at the end of the action [e.g. giving "idle_00" will call the animation from the "m01@idle_00.fbx" file in the "Assets/Resources/Animations Legacy" folder].
 
 ---------------------------------------------------
 
 CAMERA LINE:
 Changes the position and rotation of the camera following a mouse click.
 
-CAMERA|{position dX},{position dY},{position dZ}|{rotation dX},{rotation dY},{rotation dZ}
+CAMERA|{position dX},{position dY},{position dZ}|{rotation dX},{rotation dY},{rotation dZ}|{speed}
 
 * CAMERA: indicates that the current line read is a camera change action.
 * {position dX},{position dY},{position dZ}: indicates how many units the camera must move in X, Y, and Z coordinates [e.g. "1,2,-3" would move the camera one unit in the +X direction (right), two units in the +Y direction (up), and three units in the -Z direction (back)].
 * {rotation dX},{rotation dY},{rotation dZ}: indicates how many degrees the camera must rotate in X, Y, and Z coordinates [e.g. "10,-90,180" would rotate the camera 10 degrees around the X axis (down), -90 degrees around the Y axis (left), and 180 degrees around the Z axis (upside-down)].
+* {speed}: a float value indicating the speed at which the camera moves.
 
 ---------------------------------------------------
 

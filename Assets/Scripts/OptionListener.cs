@@ -1,6 +1,8 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
 
+[Serializable]
 public class OptionListener : MonoBehaviour
 {
     [SerializeField] Color mouseOverBoxColor;

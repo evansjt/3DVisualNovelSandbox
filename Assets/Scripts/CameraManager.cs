@@ -12,17 +12,17 @@ internal class CameraManager : MonoBehaviour, ILineManager
     internal Vector3 PositionDelta { get; private set; }
     internal Vector3 RotationDelta { get; private set; }
 
+    public void Action(string[] lineBlock)
+    {
+        InitializeCameraDelta(lineBlock[1].Split(','), lineBlock[2].Split(','));
+        ChangeCameraLocation(float.Parse(lineBlock[3]));
+        cameraMoved = true;
+    }
+
     internal void InitializeCameraDelta(string[] stringsOfTranslation, string[] stringsOfRotation)
     {
         PositionDelta = ParseStringArrayToVector3(stringsOfTranslation);
         RotationDelta = ParseStringArrayToVector3(stringsOfRotation);
-    }
-
-    public void Action(string[] lineBlock)
-    {
-        InitializeCameraDelta(lineBlock[1].Split(','), lineBlock[2].Split(','));
-        ChangeCameraLocation(0.75f);
-        cameraMoved = true;
     }
 
     private Vector3 ParseStringArrayToVector3(string[] positions)
