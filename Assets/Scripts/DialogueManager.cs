@@ -51,6 +51,7 @@ public class DialogueManager : MonoBehaviour, ILineManager
         }
 
         lineManagers.Add("CAMERA", Camera.main.GetComponent<CameraManager>());
+        lineManagers.Add("SHAKE", Camera.main.GetComponent<CameraShakeManager>());
         lineManagers.Add("INPUT", new InputPromptManager(inputPromptBox));
         lineManagers.Add("TEXT", new TextBoxManager(headerTextBox, dialogueTextBox, characterManagers));
         lineManagers.Add("SCORE", new ScoreManager(characterManagers));

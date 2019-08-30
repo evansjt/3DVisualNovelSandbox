@@ -1,9 +1,14 @@
 ﻿<Properties StartupConfiguration="{1986CCAD-A8DF-7327-7E78-1E3892F38CE2}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/DialogueManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Resources/Text/exampleD.txt">
     <Files>
-      <File FileName="Assets/Scripts/DialogueManager.cs" Line="74" Column="79" />
-      <File FileName="Assets/Scripts/InputPromptManager.cs" Line="87" Column="54" />
+      <File FileName="Assets/Scripts/DialogueManager.cs" Line="111" Column="1" />
+      <File FileName="Assets/Scripts/InputPromptManager.cs" />
       <File FileName="Assets/Resources/Text/example.txt" Line="28" Column="39" />
+      <File FileName="Assets/Scripts/CameraShakeManager.cs" Line="16" Column="6" />
+      <File FileName="Assets/Resources/Text/DO NOT USE IN GAME!/Readme.txt" Line="53" Column="36" />
+      <File FileName="Assets/Scripts/CameraManager.cs" Line="95" Column="1" />
+      <File FileName="Assets/Resources/Text/exampleB.txt" Line="3" Column="8" />
+      <File FileName="Assets/Resources/Text/exampleD.txt" Line="5" Column="25" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -13,11 +18,10 @@
               <Node name="Resources" expanded="True">
                 <Node name="Text" expanded="True">
                   <Node name="DO NOT USE IN GAME!" expanded="True" />
+                  <Node name="exampleD.txt" selected="True" />
                 </Node>
               </Node>
-              <Node name="Scripts" expanded="True">
-                <Node name="DialogueManager.cs" selected="True" />
-              </Node>
+              <Node name="Scripts" expanded="True" />
             </Node>
           </Node>
         </State>
@@ -26,7 +30,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="6096dc92-6f3f-4dd3-9ea3-5b110a1f25f5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="baa38cea-c012-4428-ba30-ccccdf3572fc" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

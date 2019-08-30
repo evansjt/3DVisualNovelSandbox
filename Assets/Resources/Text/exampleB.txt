@@ -1,5 +1,6 @@
 ﻿SCORE|Katsuro|-1
-CAMERA|0,0,0|10,0,0|0.25
+CAMERA|0,0,0|10,0,0|0.5
+SHAKE|0.75|0.25
 TEXT|Katsuro|Of course it is, Dummy!|storepower_20
 CAMERA|0,0,0|-10,0,0|0.25
 JUMP|example|23

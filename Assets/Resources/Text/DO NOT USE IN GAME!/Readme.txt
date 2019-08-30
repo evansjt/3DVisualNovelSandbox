@@ -44,6 +44,17 @@ CAMERA|{position dX},{position dY},{position dZ}|{rotation dX},{rotation dY},{ro
 
 ---------------------------------------------------
 
+SHAKE LINE:
+Shakes the camera following an action.
+
+SHAKE|{amount}|{duration}
+
+* SHAKE: indicates that the current line read is a camera shake action.
+* {amount}: The amount to shake the camera's frame.
+* {duration}: The duration to shake the camera's frame.
+
+---------------------------------------------------
+
 INPUT LINE:
 Triggers an input prompt to display with given options.
 
